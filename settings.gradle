@@ -1,0 +1,4 @@
+rootProject.name = "Moview"
+include ':app'
+include ':core'
+include ':favorite_movie'

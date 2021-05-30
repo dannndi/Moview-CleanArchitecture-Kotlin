@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Moview</string>
+    <string name="dummy_title">Iron-Man 2</string>
+    <string name="dummy_rating">8.2</string>
+    <string name="dummy_genres">Action, Adventure, Fantasy</string>
+    <string name="dummy_year">2012</string>
+    <string name="director">Director</string>
+    <string name="dummy_duration">1h 50m</string>
+    <string name="dummy_language">English</string>
+    <string name="dummy_cast_name">Dandi Supriyadi</string>
+    <string name="dummy_character_name">Elon Musk</string>
+    <string name="cast">Cast</string>
+    <string name="genres">Genres</string>
+    <string name="dummy_overview">this is a movie that directed by me</string>
+    <string name="overview">Overview</string>
+    <string name="poster_image">Poster Image</string>
+    <string name="add_to_favorite">Add to Favorite</string>
+    <string name="removie_from_fravorite">Removie from Fravorite</string>
+    <string name="title_favorite_movie">Module Title</string>
+    <string name="hello">Hello Dan !</string>
+    <string name="explore_your_favorite">lets explore your favorite movies</string>
+    <string name="button_favorite">Button Favorite</string>
+    <string name="popular_movie">Popular Movie</string>
+    <string name="now_playing_movie">Now Playing Movie</string>
+    <string name="backdrop_poster">Backdrop Poster</string>
+    <string name="dummy_movie_title">Iron-Man</string>
+    <string name="dummy_movie_rating">9.1</string>
+    <string name="dummy_movie_year">2011</string>
+</resources>
