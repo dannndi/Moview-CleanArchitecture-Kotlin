@@ -11,6 +11,8 @@ import com.dannndi.moview.core.domain.usecase.MovieDaoInteractor
 import com.dannndi.moview.core.domain.usecase.MovieDaoUseCase
 import com.dannndi.moview.core.domain.usecase.MovieServicesInteractor
 import com.dannndi.moview.core.domain.usecase.MovieServicesUseCase
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -28,11 +30,15 @@ val networkModule = module {
 
 val localDatabaseModule = module {
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("moview".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             MovieLocalDatabase::class.java,
             "db_movie"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
     factory { get<MovieLocalDatabase>().movieDao() }
 }
