@@ -42,9 +42,11 @@ class NowPlayingAdapter : RecyclerView.Adapter<NowPlayingAdapter.ViewHolder>() {
 
         fun bind(movie: Movie) {
             binding.apply {
-                Glide.with(itemView.context)
-                    .load("https://image.tmdb.org/t/p/w154${movie.backdropPath}")
-                    .into(imgBackdrop)
+                if (movie.backdropPath != null) {
+                    Glide.with(itemView.context)
+                        .load("https://image.tmdb.org/t/p/w780${movie.backdropPath}")
+                        .into(imgBackdrop)
+                }
                 tvTitle.text = movie.title
                 tvRating.text = movie.rating.toString()
                 tvYear.text = movie.releaseDate.split("-")[0]

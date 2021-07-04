@@ -15,7 +15,7 @@ data class MovieEntity(
     val title: String,
 
     @ColumnInfo(name = "backdrop_path")
-    val backdropPath: String,
+    val backdropPath: String?,
 
     @ColumnInfo(name = "releaseDate")
     val releaseDate: String,

@@ -49,11 +49,14 @@ class DetailActivity : AppCompatActivity() {
         }
 
         viewModel.movieDetail.observe(this) { movie ->
+            if (movie.backdropPath != null) {
+                Glide.with(this)
+                    .load("https://image.tmdb.org/t/p/original${movie.backdropPath}")
+                    .into(binding.ivBackdrop)
+            }
+
             Glide.with(this)
-                .load("https://image.tmdb.org/t/p/w500${movie.backdropPath}")
-                .into(binding.ivBackdrop)
-            Glide.with(this)
-                .load("https://image.tmdb.org/t/p/w154${movie.posterPath}")
+                .load("https://image.tmdb.org/t/p/w342${movie.posterPath}")
                 .into(binding.ivPoster)
             binding.tvTitle.text = movie.originalTitle
             binding.tvYear.text = movie.releaseDate.split("-")[0]

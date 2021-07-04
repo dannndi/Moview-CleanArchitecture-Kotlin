@@ -2,7 +2,7 @@ package com.dannndi.moview.core.domain.model
 
 class MovieDetail(
 
-    val backdropPath: String,
+    val backdropPath: String?,
 
     val overview: String,
 
